@@ -1,0 +1,222 @@
+footer
+  background-color: $primary-blue
+
+  .footer-top-section
+    display: flex
+    flex-direction: column
+    padding: 40px
+
+    @media screen and (min-width: 50em)
+      flex-direction: row
+      max-width: 950px
+      margin: 0 auto
+      padding-bottom: 100px
+
+    .footer-top-box
+      max-width: 400px
+      margin: 0 auto
+
+      @media screen and (min-width: 50em)
+        &:first-child
+          padding-right: 30px
+
+      @media screen and (min-width: 80em)
+        max-width: 300px
+        margin: 0
+
+        &:not(:last-child)
+          padding-right: 80px
+
+      p
+        font: 16px/1.5 'Roboto'
+        color: #D1D1D1
+
+      .footer-title-top-box
+        font-size: 30px
+        color: #fff
+        text-align: center
+
+        @media screen and (min-width: 50em)
+          text-align: left
+
+      &:nth-of-type(2)
+        display: none
+
+        @media screen and (min-width: 80em)
+          display: block
+
+      nav.footer-nav-container
+        .footer-nav
+          margin: 0
+          padding: 0
+          list-style: none
+
+          .footer-nav-item
+            a
+              display: block
+              padding: 10px 0
+              font: 14px 'Roboto'
+              color: #D1D1D1
+              text-transform: uppercase
+              transition: all 0.3s ease-in-out
+
+              &:hover
+                color: $casab-green
+
+              .icon
+                @include size(11px)
+                position: relative
+                bottom: 2px
+                margin-right: 10px
+
+      .footer-contact-info
+        ul
+          list-style: none
+          margin: 0 auto
+          padding: 0
+
+          li
+
+            a
+              display: flex
+              margin: 10px 0
+              padding: 5px 0
+              font: 16px/1.5 'Roboto'
+              color: #d1d1d1
+              transition: all 0.3s ease-in-out
+
+              &:hover
+                color: $casab-green
+
+              svg.icon
+                position: relative
+                top: 3px
+                margin-right: 10px
+
+            &:nth-of-type(3)
+              a
+                @media screen and (max-width: 25em)
+                  font-size: 14px
+
+  .footer-copyright-section
+    position: relative
+    display: flex
+    flex-direction: column
+    justify-content: center
+    background-color: $casab-green
+    padding: 40px 30px 20px 30px
+
+    @media screen and (min-width: 100em)
+      padding: 20px
+
+    .social-media-links-wrapper
+      order: -1
+
+      @media screen and (min-width: 100em)
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        position: absolute
+        bottom: 0
+        right: 0
+        border-style: solid
+        height: 100px
+        width: 500px
+        border-color: blue transparent $casab-green transparent
+        border-width: 0 0 100px 70px
+        filter: drop-shadow(0 0 3px rgba(0,0,0,0.35))
+
+      .footer-logo
+        text-align: center
+
+        @media screen and (min-width: 100em)
+          padding: 35px 0
+
+        img
+          @include size(200px, auto)
+
+      .footer-social-media
+        padding: 30px 20px
+        text-align: center
+
+        ul
+          list-style: none
+          margin: 0
+          padding: 0
+
+          li
+            display: inline-block
+
+            &:not(:last-child)
+              margin-right: 5px
+
+            a
+              display: block
+
+              .icon
+                @include size(3em)
+                fill: $casab-green
+                color: #fff
+                transition: all 0.3s ease-in-out
+
+              &:hover .icon
+                color: $primary-blue
+                fill: white
+                transform: rotateX(180deg) rotateY(180deg) rotateZ(180deg)
+
+    .copyright-wrapper
+      order: 0
+      text-align: center
+
+      .copyright
+        display: none
+        margin: 0
+        font: 500 13px 'Roboto'
+        color: #ffffff
+
+        a
+          position: relative
+          color: #fff
+          text-decoration: none
+
+          &:hover
+            color: #ffffff
+
+          &::before
+            content: ""
+            position: absolute
+            width: 100%
+            height: 2px
+            bottom: -3px
+            left: 0
+            background-color: #fff
+            visibility: hidden
+            transform: scaleX(0)
+            transition: all 0.3s ease-in-out 0s
+
+          &:hover::before
+            visibility: visible
+            transform: scaleX(1)
+
+        @media screen and (min-width: 80em)
+          display: block
+
+      .copyright-xs
+        margin: 0
+        font: 500 13px 'Roboto'
+        color: #ffffff
+
+        @media screen and (min-width: 80em)
+          display: none
+
+        &:not(:last-child)
+          margin-bottom: 10px
+
+        a
+          color: #ffffff
+          transition: all 0.3s ease-in-out
+
+          &:hover,
+          &:active,
+          &:focus
+            color: $primary-blue

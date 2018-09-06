@@ -1,0 +1,27 @@
+{
+  "name": "jekyllgulpproject",
+  "version": "1.0.0",
+  "description": "Web site project using Jekyll and Gulp",
+  "main": "Gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "AG Web Design",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^9.0.1",
+    "browser-sync": "^2.24.6",
+    "cssnano": "^3.10.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssnano": "^2.1.0",
+    "gulp-htmlhint": "^2.1.1",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-postcss": "^7.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^4.0.1",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^3.0.0",
+    "gulp-watch": "^5.0.0"
+  }
+}

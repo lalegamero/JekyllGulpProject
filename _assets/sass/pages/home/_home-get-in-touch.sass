@@ -1,0 +1,111 @@
+section.get-in-touch
+  display: flex
+  flex-direction: column
+
+  @media screen and (min-width: 80em)
+    flex-direction: row
+
+  .get-in-touch-left-container
+    width: 100%
+    background: #fff url('../img/Casablanca-office.png') no-repeat center
+    background-size: cover
+    padding: 60px
+
+    @media screen and (min-width: 80em)
+      width: 50%
+
+    .white-box-info
+      display: flex
+      flex-direction: row
+      justify-content: center
+      background-color: rgba(#ffffff, 0.8)
+      max-width: 650px
+      margin: 0 auto
+      padding: 30px
+
+      @media screen and (min-width: 80em)
+        background-color: #ffffff
+
+      p:first-child
+        width: 50%
+        font: 24px 'Roboto'
+        color: $primary-blue
+        padding-right: 20px
+
+      p:last-child
+        width: 45%
+        font: 16px 'Roboto'
+        color: #898989
+
+  .get-in-touch-right-container
+    flex: 1
+    background-color: #212121
+    padding: 35px
+
+    .form-box-title-section
+      text-align: left
+
+      @media screen and (min-width: 42em) and (max-width: 80em)
+        text-align: center
+
+      p:first-child
+        font: 30px 'Roboto'
+        color: #fff
+        margin: 0
+
+      p:last-child
+        font: 20px 'Roboto'
+        color: $casab-green
+
+    .form-box
+      max-width: 580px
+      margin: 0 auto
+
+      @media screen and (min-width: 80em)
+        max-width: none
+
+      .home-form
+        display: flex
+        flex-direction: column
+        justify-content: center
+
+        @media screen and (min-width: 80em)
+          flex-flow: row wrap
+
+        .home-form-input
+          flex: 1 1 100%
+          padding: 15px 8px
+          background: transparent
+          border: none
+          border-bottom: 1px solid #CCCCCC
+          color: #ffffff
+          font-size: 16px
+
+          @media screen and (min-width: 80em)
+            flex: 1 1 40%
+
+            &:nth-of-type(even)
+              margin-left: 40px
+
+          &.xl-input
+            @media screen and (min-width: 80em)
+              flex: 2 1 100%
+
+          &::placeholder
+            font-size: 14px
+
+        textarea.home-form-input
+          overflow: auto
+          resize: none
+
+        button
+          @include primary-btn ($casab-green, #ffffff)
+          width: 175px
+          margin: 30px auto 0 auto
+          border: none
+          cursor: pointer
+          transition: all 0.4s ease-in-out, transform 0.15s ease
+
+          &:active
+            outline: none
+            transform: scale(0.97)

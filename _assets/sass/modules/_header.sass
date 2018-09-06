@@ -1,0 +1,391 @@
+header
+  /* Styles for the header top section */
+  .header-top-section
+    background: white
+    padding: 20px
+    display: none
+
+/* Styles for the main nav section */
+.header-nav-section
+  position: fixed
+  display: block
+  width: 100%
+  height: 100vh
+  overflow: hidden
+  z-index: 10
+  pointer-events: none
+
+nav.container
+  display: none
+
+/* Styles for the mobile navigation menu */
+.mobile-container
+  position: absolute
+  display: block
+  width: 100%
+  height: 50px
+  background: rgba(#005B88,0.8)
+  overflow: hidden
+  transition: all 0.5s ease-out, background 1s ease-out
+  transition-delay: 0.2s
+  z-index: 1
+  pointer-events: fill
+
+  .mobile-nav-toggle
+    position: relative
+    display: inline-block
+    @include size(50px)
+    cursor: pointer
+    transform: rotate(0deg)
+    transition: all 0.3s $cubic
+    user-select: none
+
+    .mobile-burger
+      @include size(18px, 8px)
+      position: relative
+      display: block
+      margin: -4px auto 0
+      top: 50%
+
+      .bar
+        width: 100%
+        height: 1px
+        position: relative
+        display: block
+        background: #fff
+        transition: all 0.3s $cubic
+        transition-delay: 0s
+
+        &.top-bar
+            transform: translateY(0px) rotate(0deg)
+
+        &.bottom-bar
+            transform: translateY(6px) rotate(0deg)
+
+    &:hover .mobile-burger .bar
+      background: #bbbbbb
+
+  .mobile-logo-wrapper
+    display: inline-block
+    position: absolute
+    @include size(40px)
+    left: 50%
+    transform: translateX(-50%)
+    padding-top: 6px
+
+    a
+      display: block
+
+  .help-nav-toggle
+    display: inline-block
+    position: absolute
+    top: 0
+    right: 15px
+    transform: translateX(0px)
+    padding-top: 15px
+    cursor: pointer
+    transition: transform 0.5s $cubic
+    transition-delay: 0.65s
+
+    svg.icon
+      @include size(30px,22px)
+      fill: #fff
+      vertical-align: middle
+
+    &:hover .icon
+      fill: #bbbbbb
+
+  .mobile-menu-wrapper
+    .mobile-nav
+      position: relative
+      display: block
+      padding: 0px 48px 0
+      list-style: none
+
+    .mobile-main-nav-item
+      border-bottom: 1px solid #fff
+      margin-top: 5px
+      transform: scale(1.15) translateY(-30px)
+      opacity: 0
+      transition: transform 0.5s $cubic, opacity 0.6s $cubic
+      @for $i from 1 through $menuItems
+        &:nth-child(#{$i})
+          transition-delay: #{0.56 - ($i * 0.07)}s
+
+      a
+        display: block
+        position: relative
+        color: #FFF
+        font-weight: 100
+        text-decoration: none
+        font-size: 22px
+        line-height: 2.35
+        font-weight: 200
+        width: 100%
+
+        &:hover
+          color: #bbbbbb
+
+  &.menu-opened
+    height: 100%
+    background-color: $primary-blue
+    transition: all 0.3s ease-in, background 0.5s ease-in
+    transition-delay: 0.25s
+
+    .mobile-nav-toggle
+        transform: rotate(90deg)
+
+        .mobile-burger
+          .bar
+            transition: all 0.4s $cubic
+            transition-delay: 0.2s
+
+            &.top-bar
+              transform: translateY(4px) rotate(45deg)
+
+            &.bottom-bar
+              transform: translateY(3px) rotate(-45deg)
+
+    .mobile-nav
+        .mobile-main-nav-item
+          transform: scale(1) translateY(0px)
+          opacity: 1
+          @for $i from 1 through $menuItems
+            &:nth-child(#{$i})
+              transition-delay: #{0.07 * $i+0.2}s
+
+    .help-nav-toggle
+        transform: translateX(75px)
+        transition-delay: 0.3s
+
+.mobile-contact-menu-wrapper
+  pointer-events: fill
+
+  .contact-mobile-nav
+    display: none
+    position: absolute
+    top: 45px
+    right: 5px
+    background: #fff
+    padding: 20px 20px 10px 20px
+    border: 1px solid $primary-blue
+    border-radius: 2px
+    list-style: none
+
+    .contact-mobile-nav-item
+      border-top: 1px solid #ccc
+      padding: 10px 0
+
+      svg.icon
+        fill: $primary-blue
+        @include size(18px)
+        margin-right: 5px
+
+      a
+        color: $primary-blue
+        font-weight: 100
+        text-decoration: none
+        font-size: 16px
+
+        &:hover
+          text-decoration: underline
+
+    &.show-window
+      display: block
+
+    &::before
+      position: absolute
+      top: -11px
+      right: 12px
+      content: ""
+      width: 0
+      height: 0
+      border-left: 12px solid transparent
+      border-right: 12px solid transparent
+      border-bottom: 16px solid #fff
+      z-index: 5
+
+/* Media Queries */
+@media screen and (min-width: 850px)
+  header
+    .header-top-section
+      display: block
+
+      .container
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+
+        .logo-wrapper
+
+          a
+            display: block
+
+          img
+            /* Aspect ratio - 0.156 */
+            width: 260px
+            height: calc(260px * 0.156)
+
+        .header-top-info-details
+          display: flex
+          flex-direction: row
+          justify-content: flex-end
+          padding: 0 20px
+
+          .header-top-info-box
+            display: flex
+            flex-direction: row
+
+            &:not(:last-child)
+              margin-right: 10px
+
+            svg.icon
+              fill: $casab-green
+              @include size(30px)
+
+            .header-top-info-box-content
+              margin-left: 10px
+
+              p
+                font-size: 15px
+                font-weight: 400
+                line-height: 1
+                margin-bottom: 4px
+                color: #444444
+
+              a
+                color: $text-color
+                font-family: 'Roboto', sans-serif
+                font-size: 13px
+                transition: all 0.3s ease
+
+                &:hover
+                  color: $casab-green
+
+            &:nth-child(3)
+              display: none
+
+            &.just-icon
+              a
+                font-size: 15px
+                font-weight: 400
+                line-height: 1
+                color: #444444
+                margin-left: 10px
+                transition: all 0.3s ease
+
+                &:hover
+                  color: $casab-green
+
+    .header-nav-section
+      position: relative
+      display: block
+      height: auto
+      padding: 20px 0
+      background: $primary-blue
+      overflow: visible
+      pointer-events: fill
+
+      nav.container
+        display: flex
+        justify-content: space-between
+
+        .main-nav
+          list-style: none
+          padding: 0
+          margin: 0
+          display: inline-block
+
+          .main-nav-option
+            display: inline-block
+            padding: 10px 20px
+            font-family: 'Roboto', sans-serif
+
+            a
+              position: relative
+              color: white
+              font-size: 16px
+              transition: color 0.3s
+
+              &:hover,
+              &:focus
+                color: $casab-green
+
+              &:before
+                position: absolute
+                top: 50%
+                left: 50%
+                color: transparent
+                content: '•'
+                text-shadow: 0 0 transparent
+                font-size: 1.2em
+                transition: text-shadow 0.3s, color 0.3s
+                transform: translateX(-50%)
+                pointer-events: none
+
+              &:hover::before,
+              &:focus::before
+                color: #fff
+                text-shadow: 10px 0 #fff, -10px 0 #fff
+
+        .primary-btn
+          @include primary-btn($casab-green, #ffffff)
+
+          @media screen and (min-width: 1260px)
+            margin-right: 60px
+
+      .mobile-container
+        display: none
+
+      .mobile-menu-wrapper
+        display: none
+
+@media screen and (min-width: 1024px)
+  header
+    .header-top-section
+      .container
+        .logo-wrapper
+          img
+            /* Aspect ratio - 0.156 */
+            width: 340px
+            height: calc(340px * 0.156)
+
+        .header-top-info-details
+          .header-top-info-box
+            svg.icon
+              @include size(40px)
+
+            .header-top-info-box-content
+              p
+                font-size: 15px
+
+              a
+                font-size: 13px
+
+@media screen and (min-width: 1260px)
+  header
+    .header-top-section
+      .container
+        .logo-wrapper
+          img
+            /* Aspect ratio - 0.156 */
+            width: 360px
+            height: calc(360px * 0.156)
+
+        .header-top-info-details
+          .header-top-info-box
+            svg.icon
+              @include size(40px)
+
+            .header-top-info-box-content
+              p
+                font-size: 16px
+
+              a
+                font-size: 14px
+
+            &:nth-child(3)
+              display: flex
+
+            &.just-icon
+              display: none

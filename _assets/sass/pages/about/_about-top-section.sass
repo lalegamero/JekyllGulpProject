@@ -1,0 +1,99 @@
+section.about-top-section
+  width: 100%
+
+  .container
+    display: flex
+    flex-direction: column
+    justify-content: center
+    padding: 40px 20px
+
+    @media screen and (min-width: 65em)
+      flex-direction: row
+      padding: 80px 20px
+
+    .about-video-wrapper
+      max-width: 470px
+      margin: 0 auto
+
+      @media screen and (min-width: 65em)
+        margin: 0 50px
+
+      .ht-video
+        a
+          display: block
+          position: relative
+
+          &::after
+            content: url('../img/icons/play-icon.svg')
+            position: absolute
+            @include size(50px)
+            top: 85%
+            right: -12px
+            z-index: 2
+
+            @media screen and (min-width: 60em)
+              @include size(60px)
+              right: -20px
+
+          &:hover::after
+            -webkit-animation: ctabounce1 0.4s ease-in-out forwards
+            animation: ctabounce1 0.4s ease-in-out forwards
+
+          .video-thumb
+            width: 100%
+            border-radius: 4px
+
+    .best-options-info-wrapper
+      display: block
+      max-width: 470px
+      margin: 0 auto
+      padding-top: 40px
+
+      @media screen and (min-width: 65em)
+        max-width: 600px
+        margin: 0
+        padding-top: 0
+
+      h3
+        text-transform: none
+        font: 800 26px/1.4 'Roboto'
+        color: $title-blue
+
+        @media screen and (min-width: 65em)
+          text-transform: uppercase
+
+      p
+        font: 400 16px/1.5 'Roboto'
+        color: #8E8E8E
+        margin: 20px 0
+
+      ul
+        display: flex
+        flex-direction: column
+        list-style: none
+        margin: 0
+        padding: 0
+
+        @media screen and (min-width: 65em)
+          flex-flow: row wrap
+
+        li
+          position: relative
+          font: 400 15px/1.5 'Roboto'
+          color: #8E8E8E
+          margin-bottom: 10px
+          padding-left: 30px
+
+          @media screen and (min-width: 65em)
+            flex: 1 1 40%
+            font: 400 14px/1.5 'Roboto'
+
+            &:nth-of-type(odd)
+              margin-right: 10px
+
+          &:before
+            content: url(../img/icons/check-icon-blue.svg)
+            position: absolute
+            left: 0
+            top: 0
+            @include size(15px)

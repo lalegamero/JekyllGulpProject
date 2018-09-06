@@ -1,0 +1,43 @@
+section.our-mission
+  width: 100%
+
+  .container
+    display: flex
+    flex-direction: column
+    justify-content: center
+    max-width: 1090px
+
+    @media screen and (min-width: 65em)
+      flex-direction: row
+      padding: 20px
+
+    @media screen and (min-width: 65em)
+      padding: 40px 20px
+
+    .mission-section-box
+      margin: 0 auto
+      padding: 10px 0
+
+      &:nth-of-type(odd)
+        max-width: 460px
+
+        @media screen and (min-width: 65em)
+          max-width: 355px
+
+      @media screen and (min-width: 65em)
+        padding: 0
+
+      .box-title
+        font: 500 28px 'Roboto'
+        color: $primary-blue
+
+      p
+        font: 400 16px/1.6 'Roboto'
+        color: #777777
+
+      &.border
+        @media screen and (min-width: 65em)
+          padding: 20px 30px
+
+        img
+          border: solid 3px $casab-green

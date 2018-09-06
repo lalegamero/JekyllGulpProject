@@ -1,0 +1,67 @@
+section.our-staff
+  background-color: $light-grey
+  width: 100%
+
+  .container
+    max-width: 800px
+    padding: 60px 20px
+
+    .our-staff-top-info
+      text-align: center
+
+      h2
+        @include section-title
+
+        span
+          @include section-title-span
+
+      p
+        font: 16px/1.5 'Roboto'
+        color: #787878
+        max-width: 750px
+        margin: 0 auto 1em
+
+    .our-staff-members-container
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-items: center
+
+      @media screen and (min-width: 50em)
+        flex-flow: row wrap
+        justify-content: space-between
+
+      .our-staff-members-box
+        &:not(:last-child)
+          margin-bottom: 20px
+
+        @media screen and (min-width: 50em)
+          margin-bottom: 20px
+
+        .members-box-top
+          position: relative
+          @include size(333px)
+          background-color: #BEBEBE
+          border: 10px solid #fff
+          border-radius: 50%
+          box-shadow: 0 1px 7px rgba(68,68,68,0.35)
+
+          img
+            border-radius: 50%
+
+        .members-box-bottom
+          padding: 30px 40px
+          text-align: center
+
+          .members-name
+            font: 300 30px 'Arial'
+            color: $navy-blue-title
+
+          .members-role
+            font: 400 16px 'Roboto'
+            color: #666666
+
+          a
+            display: block
+            @include primary-btn ($title-blue, $casab-green)
+            margin: 0

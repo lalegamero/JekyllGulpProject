@@ -1,0 +1,62 @@
+.best-options-section
+  .container
+    max-width: 1200px
+    padding: 40px 20px
+    overflow: hidden
+
+    @media screen and (min-width: 80em)
+      display: flex
+      flex-direction: row
+      padding: 80px 20px 0 20px
+
+    .best-options-image-wrapper
+      display: none
+
+      @media screen and (min-width: 80em)
+        display: block
+        align-self: flex-end
+
+        img
+          margin-bottom: -10px
+
+    .best-options-info-wrapper
+      max-width: 750px
+      display: block
+      margin: 0 auto
+
+      @media screen and (min-width: 80em)
+        align-self: center
+
+      h3
+        text-transform: none
+        font: 800 30px 'Roboto'
+        color: $title-blue
+
+      p
+        font: 400 16px/1.5 'Roboto'
+        color: #8E8E8E
+        margin: 20px 0
+
+      ul
+        list-style: none
+        margin: 0
+        padding: 0
+
+        li
+          position: relative
+          display: inline-block
+          width: 100%
+          font: 400 15px/1.5 'Roboto'
+          color: #8E8E8E
+          margin-bottom: 10px
+          padding-left: 30px
+
+          &:before
+            content: url(../img/icons/check-icon-blue.svg)
+            position: absolute
+            left: 0
+            top: 0
+            @include size(15px)
+
+          @media screen and (min-width: 750px)
+            width: 45%

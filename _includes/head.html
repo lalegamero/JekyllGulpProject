@@ -1,0 +1,49 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width initial-scale=1">
+
+  <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
+  <!--// Metadata //-->
+  <meta name="author" content="{{ site.title }}" />
+  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@deedilus" />
+  <meta name="twitter:creator" content="@deedilus" />
+  <meta name="twitter:title" content="{{ metaTitle }}" />
+  <meta name="twitter:description" content="{{ metaDescription}}" />
+  <meta name="twitter:url" content="{{ page.url | replace:'index.html','' | absolute_url }}" />
+  <meta name="twitter:image:src" content="{{ metaPicture }}" />
+  <!-- OpenGraph / FB -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="{{ metaTitle }}" />
+  <meta property="og:site_name" content="{{ site.title }}" />
+  <meta property="og:description" content="{{ metaDescription}}" />
+  <meta property="og:url" content="{{ page.url | replace:'index.html','' | absolute_url }}" />
+  <meta property="og:image" content="{{ metaPicture }}" />
+  <!-- Favicon -->
+  <link rel="icon" href="{{ "/assets/images/favicon.ico" | relative_url }}">
+  <!-- iOS -->
+  <link rel="apple-touch-icon" href="/img/icons/touch-icon-iphone.png" />
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/icons/touch-icon-ipad.png" />
+  <link rel="apple-touch-icon" sizes="120x120" href="/img/icons/touch-icon-iphone-retina.png" />
+  <link rel="apple-touch-icon" sizes="152x152" href="/img/icons/touch-icon-ipad-retina.png" />
+  <!-- Windows Phone -->
+  <meta name="application-name" content="Matt Bengston on Development and Games" />
+  <meta name="msapplication-TileColor" content="#000000"/>
+  <meta name="msapplication-square70x70logo" content="/img/icons/ms-icon-square-70x70.png"/>
+  <meta name="msapplication-square150x150logo" content="/img/icons/ms-icon-square-150x150.png"/>
+  <meta name="msapplication-wide310x150logo" content="/img/icons/ms-icon-wide-310x150.png"/>
+  <meta name="msapplication-square310x310logo" content="/img/icons/ms-icon-large-310x310.png"/>
+  <!--// Stylesheets //-->
+  <link rel="stylesheet" href="{{ "assets/css/main.css" | relative_url }}">
+  <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
+  <!-- <link rel="manifest" href="{{ "/manifest.json" | relative_url }}"> -->
+  <link type="text/plain" rel="author" href="humans.txt">
+  {% if page.isCatPage %}
+    <link rel="alternate" type="application/atom+xml" title="{{ site.title }} on {{ page.category }}" href="{{ page.url | replace:'index.html','atom.xml' | prepend: site.baseurl | prepend: site.url }}" />
+  {% else %}
+    <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
+  {% endif %}
+</head>

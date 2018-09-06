@@ -1,0 +1,29 @@
+# humanstxt.org/
+
+Thanks for looked at my humans.txt!
+
+/* TEAM */
+Developer: Alex Gamero from AG-WedDesign.com
+Site: http://ag-webdesign.com/
+LinkedIn: https://www.linkedin.com/in/alexgamerograu/
+Location: San Diego, United States.
+
+
+/* RESOURCES */
+Icon font by fontastic.me:
+http://www.fontastic.me
+
+Font Embedding (Freight Sans) with Typekit:
+http://www.typekit.com
+
+
+/* SITE */
+Built With:
+HTML (HTML5 Doctype), Sass/CSS, Media Queries, JavaScript (Zepto.js) & Jekyll
+More: http://builtwith.com/tedgoas.com
+
+Software:
+Affinity Photo, Illustrator, ImageOptim, Web browsers, Github.
+
+Language:
+English

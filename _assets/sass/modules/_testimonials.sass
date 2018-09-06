@@ -1,0 +1,143 @@
+section.testimonials-section
+  .container
+    max-width: 1200px
+    padding: 0
+    display: flex
+    flex-direction: column
+
+    @media screen and (min-width: 60em)
+      flex-direction: row
+
+    .testimonials-messages-area
+      max-width: 750px
+      width: 100%
+      padding: 80px 20px 60px 20px
+      display: grid
+      grid-template-columns: repeat(2, 1fr)
+      grid-template-rows: auto
+      grid-gap: 40px 30px
+
+      .testimonials-message-box
+        // display: none
+        position: relative
+        max-width: 360px
+        border-radius: 2px
+        padding: 40px 30px
+        box-shadow: 0px 2px 5px rgba(51,51,51,0.5)
+
+        &.is-active
+          // display: block
+
+        .testimonials-box-top
+          display: flex
+          flex-direction: row
+          justify-content: space-between
+
+          p
+            font-size: 20px
+            color: #555555
+
+          .star-ratings
+            span
+              unicode-bidi: bidi-override
+              direction: rtl
+              font-size: 20px
+              color: $casab-green
+
+        .testimonials-box-bottom
+          max-width: 300px
+
+          p
+            font: italic 400 15px 'Roboto'
+            color: #8A8A8A
+            line-height: 1.5
+            margin: 0
+
+        &:nth-child(3n+1)
+          background: #fff
+
+        &:nth-child(3n+2)
+          background: $title-blue
+
+          &::after
+            border-color: transparent $title-blue transparent
+
+          .testimonials-box-top
+            p
+              color: #fff
+
+          .testimonials-box-bottom
+            p
+              color: #D3D3D3
+
+        &:nth-child(3n+3)
+          background: $casab-green
+
+        &::after
+          content: ''
+          position: absolute
+          top: 100%
+          right: 30px
+          width: 0
+          height: 0
+          border-style: solid
+          border-width: 0 30px 20px 0
+          border-color: transparent white transparent
+          filter: drop-shadow(0px 2px 2px rgba(130,130,130,0.8))
+          filter: "progid:DXImageTransform.Microsoft.Dropshadow(OffX=0, OffY=2, Color='#444')"
+
+      .testimonials-messages-arrows
+        max-width: 360px
+        padding: 10px 0
+        text-align: left
+
+        &:nth-of-type(odd)
+          text-align: right
+
+        button
+          cursor: pointer
+          background: #fff url('../img/icons/arrow-left-icon.svg') no-repeat 45%
+          display: inline-block
+          background-size: 25%
+          border-radius: 100px
+          border: none
+          box-shadow: 0 0 20px rgba(0,0,0,0.22)
+          width: 2.25rem
+          height: 2.25rem
+          margin: 0 5px
+          position: relative
+          transition: all 0.2s ease-in-out
+
+          &:active,
+          &:focus
+            outline: none
+
+          &:hover
+            box-shadow: 0 0 10px rgba(0,0,0,0.22)
+
+          &.arrow-right
+            background: #fff url('../img/icons/arrow-right-icon.svg') no-repeat 50%
+            background-size: 25%
+
+    .testimonials-cta-area
+      display: block
+      padding: 80px 30px
+      background-color: $casab-green
+
+      @media screen and (min-width: 60em)
+        max-width: 360px
+        margin-left: 30px
+
+      h3
+        color: white
+        font: 700 32px 'Roboto'
+        text-transform: none
+
+      p
+        color: white
+        font: 400 16px/1.5 'Roboto'
+        margin: 20px 0
+
+      a
+        @include primary-btn(transparent, #ffffff)
+        border: 2px solid #ffffff

@@ -1,0 +1,100 @@
+section.home-top
+  background: $light-grey
+  width: 100%
+
+  .container
+    max-width: 1200px
+    padding: 40px 20px
+    display: flex
+    flex-direction: column
+    justify-content: center
+
+    @media screen and (min-width: 60em)
+      flex-direction: row
+      padding: 80px 20px
+
+    .home-top-info-wrapper
+      display: block
+      max-width: 555px
+      margin: 0 auto
+
+      @media screen and (min-width: 60em)
+        padding-right: 50px
+
+      .ht-text-container
+        p:first-child
+          font: 700 22px/1.4 Arial,sans-serif
+          color: $title-blue
+          margin: 0
+
+        p
+          font-size: 16px
+          color: $text-color
+          margin: 15px 0
+
+      .ht-cta-container
+        .transparent-btn
+          @include primary-btn($casab-green, #60af7f)
+
+    .home-top-video-wrapper
+      display: block
+      padding-top: 40px
+      max-width: 470px
+      margin: 0 auto
+
+      @media screen and (min-width: 60em)
+        padding: 0
+
+      .ht-video
+        a
+          display: block
+          position: relative
+
+          &::after
+            content: url('../img/icons/play-icon.svg')
+            position: absolute
+            @include size(50px)
+            top: 85%
+            left: -12px
+            z-index: 2
+
+            @media screen and (min-width: 60em)
+              @include size(60px)
+              left: -20px
+
+          &:hover::after
+            -webkit-animation: ctabounce1 0.4s ease-in-out forwards
+            animation: ctabounce1 0.4s ease-in-out forwards
+
+          .video-thumb
+            width: 100%
+            border-radius: 4px
+            box-shadow: -10px 10px 3px 0px rgba(0, 0, 0, 0.35)
+
+@-webkit-keyframes ctabounce1
+    0%
+      -webkit-transform: translate(0px, 0px)
+      transform: translate(0px, 0px)
+    40%
+      -webkit-transform: translate(0px, -12px)
+      transform: translate(0px, -12px)
+    80%
+      -webkit-transform: translate(0px, 2px)
+      transform: translate(0px, 2px)
+    100%
+      -webkit-transform: translate(0px, 0px)
+      transform: translate(0px, 0px)
+
+@keyframes ctabounce1
+  0%
+    -webkit-transform: translate(0px, 0px)
+    transform: translate(0px, 0px)
+  40%
+    -webkit-transform: translate(0px, -12px)
+    transform: translate(0px, -12px)
+  80%
+    -webkit-transform: translate(0px, 2px)
+    transform: translate(0px, 2px)
+  100%
+    -webkit-transform: translate(0px, 0px)
+    transform: translate(0px, 0px)

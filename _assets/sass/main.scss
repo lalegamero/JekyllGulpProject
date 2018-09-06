@@ -1,0 +1,40 @@
+@charset "utf-8";
+
+// Base
+@import 'base/normalize.scss';
+@import 'base/vars';
+@import 'base/mixins';
+@import 'base/fonts';
+@import 'base/base';
+
+// Vendor
+@import 'vendor/bourbon/_bourbon.scss';
+
+
+// Modules or sections
+@import 'modules/header';
+@import 'modules/hero';
+@import 'modules/hero-pages';
+@import 'modules/providers';
+@import 'modules/facts';
+@import 'modules/testimonials';
+@import 'modules/footer';
+@import 'modules/contact-cta';
+@import 'modules/contact-details';
+@import 'modules/social-media';
+@import 'modules/contact-form';
+
+// Pages
+// Home
+@import 'pages/home/home-top';
+@import 'pages/home/home-services';
+@import 'pages/home/home-best-options';
+@import 'pages/home/home-get-in-touch';
+
+// About us
+@import 'pages/about/about-top-section';
+@import 'pages/about/about-mission-section';
+@import 'pages/about/about-our-staff';
+
+// Contact us
+@import 'pages/contact/contact-main-section';

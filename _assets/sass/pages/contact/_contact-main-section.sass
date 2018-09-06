@@ -1,0 +1,86 @@
+section.contact-main-info
+  width: 100%
+  background: #fff
+  padding: 40px 20px
+
+  @media screen and (min-width: 60em)
+    padding: 90px 20px
+
+  .contact-main-box
+    display: block
+    max-width: 1124px
+    margin: 0 auto
+    background-color: #F6F6F6
+
+    .contact-main-box-header
+      position: relative
+      background: $casab-green
+      width: 100%
+      padding: 60px
+      text-align: center
+      overflow: hidden
+      z-index: 0
+
+      &::before
+        content: ''
+        position: absolute
+        @include size(100%)
+        top: 0
+        left: 0
+        background-image: linear-gradient(rgba(104, 190, 138, 0.8), rgba(104, 190, 138, 0.8)), url(../img/contact-header-bg-770x370.jpg)
+        background-size: cover
+        background-repeat: no-repeat
+        background-position: center
+        filter: blur(3px)
+        z-index: -1
+
+      @media screen and (min-width: 60em)
+        padding: 100px
+
+      p
+        font: 800 24px 'Roboto'
+        color: $white
+        margin-bottom: 25px
+
+        @media screen and (min-width: 40em)
+          font-size: 32px
+
+      a
+        font: 500 14px 'Roboto'
+        padding: 10px 20px
+        background-color: $title-blue
+        color: $white
+        transition: all 0.3s ease-in-out
+
+        &:hover
+          background-color: $white
+          color: $title-blue
+
+        &.show-on-large
+          display: none
+          font-size: 20px
+          padding: 10px 30px
+
+        @media screen and (min-width: 40em)
+          &.show-on-large
+            display: inline-block
+
+          &:last-child
+            display: none
+
+    .contact-main-box-bottom
+      display: flex
+      flex-direction: column
+
+      @media screen and (min-width: 46.875em)
+        flex-direction: row
+
+      .contact-main-box-info
+        background-color: $casab-green
+        padding: 30px 50px
+
+      .contact-main-box-form
+        padding: 40px 50px
+
+        button
+          box-shadow: 0 10px 6px -6px rgba(119, 119, 119, 0.7)

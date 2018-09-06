@@ -1,0 +1,145 @@
+section.home-services
+  .container
+    max-width: 1200px
+    padding: 40px 20px
+
+    @media screen and (min-width: 60em)
+      padding: 80px 20px
+
+    .home-services-top-info
+      text-align: center
+
+      h2
+        @include section-title
+
+        span
+          @include section-title-span
+
+      p
+        font: 16px/1.5 'Roboto'
+        color: #787878
+        max-width: 660px
+        margin: 0 auto 1em
+
+    .home-services-main-info
+      display: flex
+      flex-direction: column
+      justify-content: center
+      padding: 20px
+
+      @media screen and (min-width: 60em)
+        flex-direction: row
+        padding: 40px 20px 0 20px
+
+      .home-services-select-product
+        p:first-child
+          font: 500 16px 'Roboto'
+          margin: 0
+          color: #666666
+
+        p:nth-of-type(2)
+          color: $title-blue
+          font: 800 20px 'Roboto'
+          position: relative
+
+          &::after
+            content: ""
+            position: absolute
+            @include size(60px, 4px)
+            background-color: $navy-blue-title
+            top: 100%
+            left: 50%
+            transform: translateX(-50%)
+            margin-top: 10px
+
+            @media screen and (min-width: 60em)
+              left: 0
+              transform: translateX(0)
+
+        p
+          text-align: center
+
+          @media screen and (min-width: 60em)
+            text-align: left
+
+        ul
+          list-style: none
+          max-width: 555px
+          margin: 40px auto 20px
+          padding: 10px
+          background-color: $casab-green
+          border-radius: 4px
+
+          @media screen and (min-width: 60em)
+            padding: 0
+            background-color: #fff
+
+          li
+            font-size: 18px
+            color: #666666
+            text-align: center
+            margin: 10px 0
+            cursor: pointer
+            transition: all 0.2s ease-in-out
+
+            &:hover
+              color: darken(#666666, 40%)
+
+            &.active
+              color: $navy-blue-title
+              font-weight: 700
+
+            @media screen and (min-width: 60em)
+              text-align: left
+
+      .home-services-product-details
+        display: none
+
+        @media screen and (min-width: 60em)
+          display: block
+          text-align: center
+          position: relative
+          padding: 0 20px
+
+          &::after
+            content: ''
+            position: absolute
+            width: 80%
+            top: 30px
+            left: 58px
+            background-color: $primary-blue
+            height: 66%
+            z-index: 1
+
+          img
+            @include size(380px)
+            margin: 0 auto
+            position: relative
+            z-index: 5
+
+      .home-services-bullet-points
+        .auto-ins-bullet-list
+          ul
+            list-style: none
+            max-width: 555px
+            margin: 0 auto
+            padding: 10px
+            background-color: $casab-green
+            border-radius: 4px
+
+            @media screen and (min-width: 60em)
+              background-color: #fff
+              padding: 0
+
+            li
+              font-size: 16px
+              color: #666666
+              text-align: center
+              margin: 10px 0
+              cursor: default
+
+              @media screen and (min-width: 60em)
+                text-align: left
+                font-size: 1.2em
+                color: $title-blue
+                margin: 0 0 10px 0

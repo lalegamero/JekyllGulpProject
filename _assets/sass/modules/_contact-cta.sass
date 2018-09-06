@@ -1,0 +1,40 @@
+section.contact-cta
+  width: 100%
+
+  .container
+    position: relative
+    padding: 50px 20px
+    text-align: center
+
+    &::before
+      content: url(../img/icons/phone-bg-icon.svg)
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%,-50%)
+      @include size(120px)
+      color: #D9D9D9
+      opacity: 0.08
+      z-index: -1
+
+      @media screen and (min-width: 60em)
+        @include size(180px)
+
+    .phone-number-cta
+      font-weight: 800
+      font-size: calc(14px + 3vw)
+      font-family: 'Roboto'
+      color: $primary-blue
+      margin-bottom: 10px
+
+      @media screen and (min-width: 100em)
+        font-size: 52px
+
+    .info-cta
+      font-size: calc(12px + 3vw)
+      line-height: 1em
+      color: $casab-green
+      margin: 0
+
+      @media screen and (min-width: 100em)
+        font-size: 48px

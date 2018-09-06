@@ -1,0 +1,55 @@
+.contact-form-wrapper
+  max-width: 580px
+  margin: 0 auto
+
+  @media screen and (min-width: 80em)
+    max-width: none
+
+  .the-form
+    display: flex
+    flex-direction: column
+    justify-content: center
+
+    @media screen and (min-width: 80em)
+      flex-flow: row wrap
+
+    .the-form-input
+      flex: 1 1 100%
+      padding: 15px 8px
+      background: transparent
+      border: none
+      border-bottom: 1px solid #CCCCCC
+      color: $primary-blue
+      font-size: 16px
+
+      @media screen and (min-width: 80em)
+        flex: 1 1 40%
+
+        &:nth-of-type(even)
+          margin-left: 40px
+
+      &.xl-input
+        @media screen and (min-width: 80em)
+          flex: 2 1 100%
+
+      &::placeholder
+        font-size: 14px
+
+    textarea.the-form-input
+      overflow: auto
+      resize: none
+
+    button
+      @include primary-btn ($casab-green, $primary-blue)
+      width: 175px
+      margin: 30px auto 0 auto
+      border: none
+      cursor: pointer
+      transition: all 0.4s ease-in-out, transform 0.15s ease
+
+      &:hover
+        color: #ececec
+
+      &:active
+        outline: none
+        transform: scale(0.97)

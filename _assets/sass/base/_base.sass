@@ -1,0 +1,108 @@
+html
+  // border-box box model allows us to add padding and border to our elements without increasing their size
+  box-sizing: border-box
+
+  // WAT IS THIS?!
+  // We inherit box-sizing: border-box; from our <html> selector
+*,
+*:before,
+*:after
+  box-sizing: inherit
+
+
+body
+  font-size: 12px
+  line-height: 1.6
+  font-family: Arial, sans-serif
+  -webkit-font-smoothing: antialiased
+  -webkit-text-size-adjust: 100%
+
+.container
+  width: 100%
+  max-width: 1300px
+  margin: 0 auto
+  padding: 0 20px
+
+// Links
+a
+  color: $link-color
+  text-decoration: none
+  outline: none
+
+a:hover, a:focus
+  color: lighten($link-color, 20%)
+  outline: none
+
+//	Typography
+
+h1, h2, h3, h4, h5, h6
+  color: $accent-color
+  font-family: 'Montserrat', sans-serif
+  text-transform: uppercase
+  font-weight: bold
+  margin: 0
+
+h1
+  font-size: 64px
+  line-height: 1.05
+  letter-spacing: -1px
+  @media only screen and (max-width: 680px)
+    font-size: 42px
+
+h2
+  font-size: 34px
+  line-height: 1.14
+  @media only screen and (max-width: 680px)
+    font-size: 30px
+
+h3
+  font-size: 24px
+  line-height: 1.38
+  @media only screen and (max-width: 680px)
+    font-size: 20px
+
+h4
+  font-size: 20px
+  line-height: 1.38
+  @media only screen and (max-width: 680px)
+    font-size: 17px
+
+p
+  margin: 0 0 20px 0
+
+em
+  font-style: italic
+
+strong
+  font-weight: bold
+
+hr
+  border: solid #ddd
+  border-width: 1px 0 0
+  clear: both
+  margin: 10px 0 30px
+  height: 0
+
+img
+  max-width: 100%
+
+.access-label
+  position: absolute !important
+  width: 1px !important
+  height: 1px !important
+  overflow: hidden !important
+  white-space: nowrap !important
+
+/**
+ * Default icon style
+ */
+.icon
+  /* Use the current text color as the icon’s fill color. */
+  fill: currentColor
+  /* Inherit the text’s size too. Also allows sizing the icon by changing its font-size. */
+  width: 1em
+  height: 1em
+  /* The default vertical-align is `baseline`, which leaves a few pixels of space below the icon. Using `center` prevents this. For icons shown alongside text, you may want to use a more precise value, e.g. `vertical-align: -4px` or `vertical-align: -0.15em`. */
+  vertical-align: middle
+  /* Paths and strokes that overflow the viewBox can show in IE11. */
+  overflow: hidden
