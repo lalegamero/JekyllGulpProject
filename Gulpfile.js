@@ -14,6 +14,7 @@ const imagemin = require('gulp-imagemin');
 const htmlhint = require("gulp-htmlhint");
 const concat = require('gulp-concat');
 const rename = require('gulp-rename');
+const babel = require('gulp-babel');
 
 const messages = {
     jekyllBuild: '<span style="color: grey">Running:</span> $ jekyll build'
@@ -94,6 +95,9 @@ gulp.task('sass-rebuild', function() {
 
 gulp.task('js-rebuild', function(cb) {
     return gulp.src('_assets/js/**/*.js')
+      .pipe(babel({
+        presets: ['@babel/env']
+      }))
       .pipe(concat('main.js'))
       .pipe(gulp.dest('_site/assets/js/'))
       .pipe(rename('main.min.js'))

@@ -10,13 +10,13 @@
       <div class="home-services-select-product">
         <p>We provide</p>
         <p>Best Service</p>
-        <ul>
-          <li>Auto Insurance</li>
-          <li>Home Insurance</li>
-          <li>Life insurance</li>
-          <li>Business Insurance</li>
-          <li>Personal Insurance</li>
-          <li>Recreational Vehicle Insurance</li>
+        <ul class="service-list">
+          <li id="autoIns">Auto Insurance</li>
+          <li id="homeIns">Home Insurance</li>
+          <li id="lifeIns">Life insurance</li>
+          <li id="bussIns">Business Insurance</li>
+          <li id="persIns">Personal Insurance</li>
+          <li id="recreIns">Recreational Vehicle Insurance</li>
         </ul>
       </div>
       <div class="home-services-product-details">
@@ -24,7 +24,7 @@
         <p>Placerat facer possim assum. Typi non habent claritatem insitam est legentis in iis qui facit eorum claritatem.</p>
       </div>
       <div class="home-services-bullet-points">
-        <div class="auto-ins-bullet-list">
+        <div class="auto-ins-bullet-list" show-hide="autoIns">
           <ul>
             <li>Liability Coverage</li>
             <li>Comprehensive Coverage</li>
@@ -40,6 +40,12 @@
             <li>Rental Reimbursement</li>
             <li>Personal Injury Protection (PIP)</li>
             <li>Medical Payments Coverage</li>
+          </ul>
+        </div>
+        <div class="auto-ins-bullet-list non-active" show-hide="homeIns">
+          <ul>
+            <li>Viva el Betis</li>
+            <li>Esto funciona!</li>
           </ul>
         </div>
       </div>

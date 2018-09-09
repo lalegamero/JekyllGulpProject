@@ -19,4 +19,21 @@
     }
 }());
 
-/* Funtion to show/hide all insurance services at the home page */
+/* Function to display all insurance services related to any service */
+(function(){
+  const serviceListItem = document.querySelectorAll('.service-list li');
+  const insuranceFeatures = document.querySelectorAll('.auto-ins-bullet-list');
+
+  for (let i = 0; i < serviceListItem.length; i++) {
+    serviceListItem[i].onclick = function() {
+      const x = this.getAttribute('id');
+      console.log(x);
+
+      for (let j = 0; j < insuranceFeatures.length; j++) {
+          if (this.getAttribute('hide-show') === x) {
+            console.log('vamossss!!');
+          }
+      }
+    }
+  }
+}());
