@@ -29,9 +29,13 @@ section.home-services
 
       @media screen and (min-width: 60em)
         flex-direction: row
+        min-height: 530px
         padding: 40px 20px 0 20px
 
       .home-services-select-product
+        @media screen and (min-width: 60em)
+          flex: 1 0 0
+
         p:first-child
           font: 500 16px 'Roboto'
           margin: 0
@@ -68,7 +72,7 @@ section.home-services
           margin: 40px auto 20px
           padding: 10px
           background-color: $casab-green
-          border-radius: 4px
+          // border-radius: 3px
 
           @media screen and (min-width: 60em)
             padding: 0
@@ -79,15 +83,19 @@ section.home-services
             color: #666666
             text-align: center
             margin: 10px 0
+            padding: 2px 10px
+            border-radius: 3px
             cursor: pointer
             transition: all 0.2s ease-in-out
 
             &:hover
               color: darken(#666666, 40%)
+              background-color: transparentize($casab-green, 0.5)
 
             &.active
               color: $navy-blue-title
               font-weight: 700
+              background-color: $casab-green
 
             @media screen and (min-width: 60em)
               text-align: left
@@ -118,7 +126,12 @@ section.home-services
             z-index: 5
 
       .home-services-bullet-points
-        .auto-ins-bullet-list
+        @media screen and (min-width: 60em)
+          flex: 1 0 0
+
+        .ins-bullet-list
+          display: none
+
           ul
             list-style: none
             max-width: 555px
@@ -133,7 +146,7 @@ section.home-services
 
             li
               font-size: 16px
-              color: #666666
+              color: $primary-blue
               text-align: center
               margin: 10px 0
               cursor: default
@@ -144,5 +157,5 @@ section.home-services
                 color: $title-blue
                 margin: 0 0 10px 0
 
-          &.non-active
-            display: none
+          &.active
+            display: block

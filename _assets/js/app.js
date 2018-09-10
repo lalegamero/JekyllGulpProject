@@ -20,20 +20,19 @@
 }());
 
 /* Function to display all insurance services related to any service */
-(function(){
-  const serviceListItem = document.querySelectorAll('.service-list li');
-  const insuranceFeatures = document.querySelectorAll('.auto-ins-bullet-list');
+function onTabClick(event) {
+  let activeTabs = document.querySelectorAll('.active');
+  event.preventDefault();
 
-  for (let i = 0; i < serviceListItem.length; i++) {
-    serviceListItem[i].onclick = function() {
-      const x = this.getAttribute('id');
-      console.log(x);
-
-      for (let j = 0; j < insuranceFeatures.length; j++) {
-          if (this.getAttribute('hide-show') === x) {
-            console.log('vamossss!!');
-          }
-      }
-    }
+  // deactivate existing active tab and panel
+  for( let i = 0; i < activeTabs.length; i++) {
+    activeTabs[i].className = activeTabs[i].className.replace('active', '');
   }
-}());
+
+  // activate new tab and panel
+  event.target.className += ' active';
+  document.getElementById(event.target.querySelector('a').getAttribute('href').split('#')[1]).className += ' active';
+}
+
+const homeServiceList = document.getElementById('homeServiceList');
+homeServiceList.addEventListener('click', onTabClick, false);
